@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset='utf-8'></meta>
         <link rel="stylesheet" href="css/index.css">
-        <script src="js/function.js"></script>
-        <script src="js/calculator.js"></script>
+        <script src="system.js"></script>
+        <script>
+            SystemJS.config(
+                {
+                    transpiler: 'typescript', 
+                    baseURL: './js', 
+                    packages: { 
+                        '.': { 
+                            format: 'system',
+                            defaultExtension: 'js' 
+                        } 
+                    },
+                }
+            );
+            SystemJS.import('function.js');
+        </script>   
     </head>
     <body>
        <div id="calculator-wrap">

@@ -1,26 +1,26 @@
 class operation {
-    add(a: number, b: number): number { return a + b; }
-    multiple(a: number, b: number): number { return a * b; };
-    subtraction(a: number, b: number): number { return a - b; };
-    division(a: number, b: number): number { return a / b; };
-    equal(): void { cal.calculator(); };
-    percent(a: number): number { return a / 100; };
-    reverse(a: number): number { return -a; };
+    add(a: number, b: number) { return a + b; }
+    multiple(a: number, b: number) { return a * b; };
+    subtraction(a: number, b: number) { return a - b; };
+    division(a: number, b: number) { return a / b; };
+    percent(a: number) { return a / 100; };
+    reverse(a: number) { return -a; };
 }
 
-class Calculator extends operation {
+export class Calculator extends operation {
     constructor(
-        private _parameterA: string = "",
-        private _parameterB: string = "",
+        private _parameterA = "",
+        private _parameterB = "",
         private _operator = "",
-        private _tmpA: string = ""
-    )
-    { super(); };
+        private _tmpA = ""
+    ) {
+        super();
+    };
 
     calculator(excuteType: number = 0) {
-        let resultValue: number = 0;
-        let intParameterA: number = 0;
-        let intParameterB: number = parseFloat(this._parameterB);
+        let resultValue = 0;
+        let intParameterA = 0;
+        let intParameterB = parseFloat(this._parameterB);
 
         if (excuteType == 1) {
             intParameterA = parseFloat(this._tmpA);
@@ -103,12 +103,4 @@ class Calculator extends operation {
             return "";
         }
     }
-}
-
-
-let cal = new Calculator();
-
-window.onload = () => {
-    cal.init();
-    initAction();
 }
