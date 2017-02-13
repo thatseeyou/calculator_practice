@@ -1,4 +1,6 @@
-class operation {
+import "function";
+
+class Operation {
     add(a: number, b: number): number { return a + b; }
     multiple(a: number, b: number): number { return a * b; };
     subtraction(a: number, b: number): number { return a - b; };
@@ -8,7 +10,7 @@ class operation {
     reverse(a: number): number { return -a; };
 }
 
-class Calculator extends operation {
+class Calculator extends Operation {
     constructor(
         private _parameterA: string = "",
         private _parameterB: string = "",
@@ -105,10 +107,8 @@ class Calculator extends operation {
     }
 }
 
-
-let cal = new Calculator();
-
 window.onload = () => {
+    let cal = new Calculator();
     cal.init();
     initAction();
 }
