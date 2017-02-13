@@ -8,7 +8,7 @@ class operation {
     reverse(a: number): number { return -a; };
 }
 
-class Calculator extends operation {
+export class Calculator extends operation {
     constructor(
         private _parameterA: string = "",
         private _parameterB: string = "",
@@ -106,9 +106,3 @@ class Calculator extends operation {
 }
 
 
-let cal = new Calculator();
-
-window.onload = () => {
-    cal.init();
-    initAction();
-}

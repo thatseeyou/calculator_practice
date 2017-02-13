@@ -28,11 +28,12 @@ var Calculator = (function (_super) {
         if (_parameterB === void 0) { _parameterB = ""; }
         if (_operator === void 0) { _operator = ""; }
         if (_tmpA === void 0) { _tmpA = ""; }
-        _super.call(this);
-        this._parameterA = _parameterA;
-        this._parameterB = _parameterB;
-        this._operator = _operator;
-        this._tmpA = _tmpA;
+        var _this = _super.call(this) || this;
+        _this._parameterA = _parameterA;
+        _this._parameterB = _parameterB;
+        _this._operator = _operator;
+        _this._tmpA = _tmpA;
+        return _this;
     }
     ;
     Calculator.prototype.calculator = function (excuteType) {
